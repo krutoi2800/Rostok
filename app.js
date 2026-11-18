@@ -64,14 +64,40 @@ function weekCard() {
 }
 function rows(items,wish=false){return items.map(t=>'<div class="row"><button class="check '+(t.done?'checked':'')+'" aria-label="'+(t.done?'Вернуть':'Завершить')+' '+esc(t.text)+'" data-toggle="'+t.id+'">'+(t.done?'✓':'')+'</button><button class="label '+(t.done?'done':'')+'" data-edit="'+t.id+'">'+(tab==='wish'&&t.photo?'<img class="wish-thumb" alt="" src="'+esc(t.photo)+'">':'')+esc(t.text)+(tab==='closed'?'<br><small>'+esc(fmt(fromKey(t.date),{day:'numeric',month:'long'}))+'</small>':'')+'</button></div>').join('')}
 function progress(){const days=week().map(dateKey),tasks=p().tasks.filter(t=>days.includes(t.date)),n=tasks.filter(t=>t.done).length,pc=tasks.length?Math.round(n*100/tasks.length):0;return '<section class="card progress"><div class="eyebrow">Прогресс недели</div><div class="split"><h2>Выполнено</h2><b class="big">'+pc+'%</b></div><div class="track"><i style="width:'+pc+'%"></i></div><div class="small">'+n+' из '+tasks.length+' планов за выбранную неделю</div></section>'}
-function petCard(){const hatched=p().pet!==null,n=p().tasks.filter(t=>t.done).length,lv=n>=15?4:n>=7?3:n>=3?2:1,pet=pets[p().pet];return '<section class="card pet"><div class="pethead"><div class="eyebrow">Мой питомец</div><h2>'+(hatched?pet[1]:'Таинственное яйцо')+'</h2></div>'+(hatched?'<div class="petface" style="--size:'+(54+lv*14)+'px">'+pet[0]+'</div><div class="petfoot"><b>'+['','Малыш','Подросток','Взрослый','Хранитель'][lv]+' · уровень '+lv+'</b><br><small>'+(lv===4?'Питомец полностью вырос':'До следующего уровня: '+n+' из '+[3,7,15][lv-1]+' планов')+'</small></div>':'<img class="art" src="egg.webp" alt="Яйцо с ростком среди клевера"><div class="petfoot">'+btn('hatch','Раскрыть яйцо　✧')+'</div>')+'</section>'}
+const petKinds=['fox','cat','rabbit','panda'];
+const petThresholds=[0,3,7,15,...Array.from({length:21},(_,i)=>25+i*10)];
+function petProgress(){
+  const cur=p();
+  if(!Number.isFinite(cur.petXp)){
+    cur.petXp=cur.tasks.filter(t=>t.done).length;
+    cur.tasks.forEach(t=>{if(t.done)t.petRewarded=true});
+    save();
+  }
+  const xp=Math.max(0,cur.petXp);
+  let level=1;
+  while(level<25&&xp>=petThresholds[level])level++;
+  return {xp,level,next:petThresholds[level]};
+}
+function petImage(kind,level){return 'assets/pets/'+petKinds[kind]+'-'+String(level).padStart(2,'0')+'.webp'}
+function petRank(level){return level<=5?'Малыш':level<=10?'Исследователь':level<=15?'Хранитель':level<=20?'Защитник':'Легенда'}
+function petCard(){
+  const hatched=Number.isInteger(p().pet)&&p().pet>=0&&p().pet<pets.length;
+  const {xp,level,next}=petProgress(),pet=pets[p().pet];
+  const percent=level===25?100:Math.round((xp-petThresholds[level-1])*100/(next-petThresholds[level-1]));
+  return '<section class="card pet"><div class="pethead"><div class="eyebrow">Мой питомец · 25 обликов</div><h2>'+(hatched?pet[1]:'Таинственное яйцо')+'</h2></div>'+(hatched?'<div class="pet-stage"><img class="pet-sprite" src="'+petImage(p().pet,level)+'" alt="'+pet[1]+' — '+petRank(level)+', уровень '+level+'" width="384" height="384"></div><div class="petfoot"><div class="split"><b>'+petRank(level)+'</b><span class="tag">'+level+' / 25</span></div><div class="track"><i style="width:'+percent+'%"></i></div><small>'+(level===25?'Все облики открыты!':'До нового облика: '+(next-xp)+' выполненных планов')+'</small><p class="small muted">Рост сохраняется даже при удалении завершённых планов.</p>'+btn('pet-gallery','Посмотреть эволюцию','pet-gallery-button')+'</div>':'<img class="art" src="egg.webp" alt="Яйцо с ростком среди клевера"><div class="petfoot">'+btn('hatch','Раскрыть яйцо　✧')+'</div>')+'</section>';
+}
+function petGallery(){
+ const {level}=petProgress();
+ modal('Эволюция · '+pets[p().pet][1],'<p class="small muted">Один новый выполненный план — один опыт. Повторные галочки не добавляют опыт.</p><div class="evolution-grid">'+petThresholds.map((xp,i)=>'<figure class="evolution-item '+(i+1>level?'locked':'')+'"><img loading="lazy" src="'+petImage(p().pet,i+1)+'" alt="'+petRank(i+1)+', уровень '+(i+1)+'" width="160" height="160"><figcaption><b>Уровень '+(i+1)+'</b><small>'+xp+' опыта'+(i+1>level?' · ещё закрыт':' · открыт')+'</small></figcaption></figure>').join('')+'</div>');
+ $('dialog').classList.add('evolution-dialog');
+}
 function render(){const cur=p(),dayTasks=cur.tasks.filter(t=>t.date===selected),closed=cur.tasks.filter(t=>t.done).sort((a,b)=>b.date.localeCompare(a.date));document.body.classList.toggle('rose',theme()==='rose');document.body.dataset.theme=theme();document.body.dataset.background=cur.background||'plain';$('nav').innerHTML=Object.entries(tabs).map(([k,v])=>btn(k,'<svg viewBox="0 0 24 24"><path d="'+paths[k]+'"/></svg>'+v,k===tab?'active':'')).join('');$('.who').innerHTML=av()+esc(cur.name||'Мой профиль');$('#today').textContent=fmt(new Date(),{weekday:'long',day:'numeric',month:'long'});const title=tab==='plans'?'Мой планер':tabs[tab],sub={plans:'Каждый выполненный план помогает питомцу расти.',wish:'Мечты, которые хочется исполнить.',closed:'Здесь собраны твои выполненные планы.',profile:'Имя, аватар и оформление твоего планера.'};let content='';
 if(tab==='plans')content='<div class="layout"><div class="stack">'+weekCard()+'<section class="card tasks"><div class="split"><h2>Планы на '+(selected===dateKey(new Date())?'сегодня':fmt(fromKey(selected),{day:'numeric',month:'long'}))+'</h2><span class="tag">'+dayTasks.filter(t=>t.done).length+' / '+dayTasks.length+'</span></div><div class="rows">'+(rows(dayTasks)||'<div class="empty">Пока свободно. Что хочешь сделать?</div>')+'</div>'+btn('add','＋　Добавить план','add')+'</section></div><div class="stack">'+petCard()+progress()+'</div></div>';
 if(tab==='closed'||tab==='wish'){const wish=tab==='wish',items=wish?cur.wishes:closed;content='<section class="card"><div class="split"><h2>'+(wish?'Мои желания':'Выполнено')+'</h2><span class="tag">'+items.length+'</span></div><div class="rows">'+(rows(items)||'<div class="empty">'+(wish?'Какое желание запишем первым?':'Отметь план галочкой, и он появится здесь.')+'</div>')+'</div>'+(wish?btn('add','＋　Добавить желание','add'):'')+'</section>'}
 if(tab==='profile')content='<section class="card profile"><div class="split">'+av()+'<div><h2>'+esc(cur.name||'Мой профиль')+'</h2>'+btn('account','Изменить профиль','add')+'</div></div><h2>Режим</h2><p class="muted small">У каждого режима свои планы, желания и питомец. Всё сохраняется на этом устройстве.</p><div class="mode">'+btn('boy','Для мальчика',state.mode==='boy'?'active':'')+btn('girl','Для девочки',state.mode==='girl'?'active':'')+'</div></section>';
 if(tab==='profile')content+=friendsCard()+appearance()+backupCard();
 $('#app').innerHTML='<div class="title"><h1>'+title+'</h1><p>'+sub[tab]+'</p></div>'+content;document.querySelector('[data-act=prev]')?.setAttribute('aria-label',monthView()?'Предыдущий месяц':'Предыдущая неделя');document.querySelector('[data-act=next]')?.setAttribute('aria-label',monthView()?'Следующий месяц':'Следующая неделя')}
-function modal(title,html){$('#dtitle').textContent=title;$('#fields').innerHTML=html;$('dialog').showModal()}
+function modal(title,html){$('dialog').classList.remove('evolution-dialog');$('#dtitle').textContent=title;$('#fields').innerHTML=html;$('dialog').showModal()}
 function editor(t){op='item';edit=t?.id;let wish=tab==='wish';wishDraft=t?.photo||'';modal(wish?'Желание':'План','<label for="item">Что '+(wish?'хочется':'запланировано')+'?</label><input id="item" required maxlength="180" value="'+esc(t?.text||'')+'">'+(wish?wishPhotoEditor():'<label for="when">Дата</label><input type="date" id="when" required value="'+(t?.date||selected)+'">')+'<button class="primary">Сохранить</button>'+(edit?btn('del','Удалить','delete'):''))}
 function items(){return tab==='wish'?p().wishes:p().tasks}
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const a=b.dataset.act;
@@ -81,11 +107,12 @@ if(b.dataset.theme){p().theme=b.dataset.theme;save()}
 if(b.dataset.background){p().background=b.dataset.background;save()}
 if(a==='today')selected=dateKey(new Date());
 if(b.dataset.day)selected=b.dataset.day;
-if(b.dataset.toggle){const t=items().find(t=>t.id===b.dataset.toggle);t.done=!t.done;save()}
+if(b.dataset.toggle){const t=items().find(t=>t.id===b.dataset.toggle);petProgress();t.done=!t.done;if(t.done&&!t.petRewarded){t.petRewarded=true;p().petXp++}save()}
 if(b.dataset.edit){editor(items().find(t=>t.id===b.dataset.edit));return}
 if(Object.hasOwn(tabs,a)){tab=a;window.scrollTo(0,0)}
 if(a==='prev'||a==='next')selected=dateKey(monthView()?moveMonth(fromKey(selected),a==='prev'?-1:1):shift(fromKey(selected),a==='prev'?-7:7));
 if(a==='hatch'&&p().pet===null){p().pet=Math.floor(Math.random()*pets.length);save();say('Из яйца появился '+pets[p().pet][1].toLowerCase()+'!')}
+if(a==='pet-gallery'){op='info';petGallery();return}
 if(a==='add'){editor();return}
 if(a==='install'){op='info';modal('На главный экран','<p>В Safari открой меню страницы и нажми <b>«Поделиться»</b>. Выбери <b>«На экран Домой»</b> и нажми <b>«Добавить»</b>.</p><p class="small muted">Если пункт скрыт, прокрути список действий вниз.</p>'+btn('close','Понятно','primary'));return}
 if(a==='account'){op='account';avatarDraft=p().avatar;modal('Мой профиль','<label for="name">Имя</label><input id="name" maxlength="36" value="'+esc(p().name)+'"><label for="photo">Аватарка</label><input id="photo" type="file" accept="image/*"><button class="primary" id="saveProfile">Сохранить</button>');return}
