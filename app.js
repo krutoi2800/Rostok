@@ -78,7 +78,7 @@ function petProgress(){
   while(level<25&&xp>=petThresholds[level])level++;
   return {xp,level,next:petThresholds[level]};
 }
-function petImage(kind,level){return 'assets/pets/'+petKinds[kind]+'-'+String(level).padStart(2,'0')+'.webp'}
+function petImage(kind,level){return './'+petKinds[kind]+'-'+String(level).padStart(2,'0')+'.webp'}
 function petRank(level){return level<=5?'Малыш':level<=10?'Исследователь':level<=15?'Хранитель':level<=20?'Защитник':'Легенда'}
 function petCard(){
   const hatched=Number.isInteger(p().pet)&&p().pet>=0&&p().pet<pets.length;
