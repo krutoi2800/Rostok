@@ -1,0 +1,802 @@
+[
+  {
+    "species": "fox",
+    "level": 1,
+    "file": "fox-01.webp",
+    "width": 480,
+    "height": 320,
+    "bytes": 20612
+  },
+  {
+    "species": "fox",
+    "level": 2,
+    "file": "fox-02.webp",
+    "width": 462,
+    "height": 480,
+    "bytes": 34400
+  },
+  {
+    "species": "fox",
+    "level": 3,
+    "file": "fox-03.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 34096
+  },
+  {
+    "species": "fox",
+    "level": 4,
+    "file": "fox-04.webp",
+    "width": 461,
+    "height": 480,
+    "bytes": 35652
+  },
+  {
+    "species": "fox",
+    "level": 5,
+    "file": "fox-05.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 34754
+  },
+  {
+    "species": "fox",
+    "level": 6,
+    "file": "fox-06.webp",
+    "width": 453,
+    "height": 480,
+    "bytes": 37202
+  },
+  {
+    "species": "fox",
+    "level": 7,
+    "file": "fox-07.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 37138
+  },
+  {
+    "species": "fox",
+    "level": 8,
+    "file": "fox-08.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 38348
+  },
+  {
+    "species": "fox",
+    "level": 9,
+    "file": "fox-09.webp",
+    "width": 456,
+    "height": 480,
+    "bytes": 35340
+  },
+  {
+    "species": "fox",
+    "level": 10,
+    "file": "fox-10.webp",
+    "width": 472,
+    "height": 480,
+    "bytes": 43664
+  },
+  {
+    "species": "fox",
+    "level": 11,
+    "file": "fox-11.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 35968
+  },
+  {
+    "species": "fox",
+    "level": 12,
+    "file": "fox-12.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 35506
+  },
+  {
+    "species": "fox",
+    "level": 13,
+    "file": "fox-13.webp",
+    "width": 452,
+    "height": 480,
+    "bytes": 41430
+  },
+  {
+    "species": "fox",
+    "level": 14,
+    "file": "fox-14.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 39878
+  },
+  {
+    "species": "fox",
+    "level": 15,
+    "file": "fox-15.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 54108
+  },
+  {
+    "species": "fox",
+    "level": 16,
+    "file": "fox-16.webp",
+    "width": 462,
+    "height": 480,
+    "bytes": 69308
+  },
+  {
+    "species": "fox",
+    "level": 17,
+    "file": "fox-17.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 42770
+  },
+  {
+    "species": "fox",
+    "level": 18,
+    "file": "fox-18.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 51524
+  },
+  {
+    "species": "fox",
+    "level": 19,
+    "file": "fox-19.webp",
+    "width": 467,
+    "height": 480,
+    "bytes": 46154
+  },
+  {
+    "species": "fox",
+    "level": 20,
+    "file": "fox-20.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 46548
+  },
+  {
+    "species": "fox",
+    "level": 21,
+    "file": "fox-21.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 52038
+  },
+  {
+    "species": "fox",
+    "level": 22,
+    "file": "fox-22.webp",
+    "width": 480,
+    "height": 480,
+    "bytes": 65366
+  },
+  {
+    "species": "fox",
+    "level": 23,
+    "file": "fox-23.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 52978
+  },
+  {
+    "species": "fox",
+    "level": 24,
+    "file": "fox-24.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 60122
+  },
+  {
+    "species": "fox",
+    "level": 25,
+    "file": "fox-25.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 75714
+  },
+  {
+    "species": "cat",
+    "level": 1,
+    "file": "cat-01.webp",
+    "width": 480,
+    "height": 480,
+    "bytes": 28160
+  },
+  {
+    "species": "cat",
+    "level": 2,
+    "file": "cat-02.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 28118
+  },
+  {
+    "species": "cat",
+    "level": 3,
+    "file": "cat-03.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 35482
+  },
+  {
+    "species": "cat",
+    "level": 4,
+    "file": "cat-04.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 29638
+  },
+  {
+    "species": "cat",
+    "level": 5,
+    "file": "cat-05.webp",
+    "width": 464,
+    "height": 480,
+    "bytes": 34476
+  },
+  {
+    "species": "cat",
+    "level": 6,
+    "file": "cat-06.webp",
+    "width": 463,
+    "height": 480,
+    "bytes": 34660
+  },
+  {
+    "species": "cat",
+    "level": 7,
+    "file": "cat-07.webp",
+    "width": 452,
+    "height": 480,
+    "bytes": 36974
+  },
+  {
+    "species": "cat",
+    "level": 8,
+    "file": "cat-08.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 66704
+  },
+  {
+    "species": "cat",
+    "level": 9,
+    "file": "cat-09.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 32926
+  },
+  {
+    "species": "cat",
+    "level": 10,
+    "file": "cat-10.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 39002
+  },
+  {
+    "species": "cat",
+    "level": 11,
+    "file": "cat-11.webp",
+    "width": 465,
+    "height": 480,
+    "bytes": 37424
+  },
+  {
+    "species": "cat",
+    "level": 12,
+    "file": "cat-12.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 36144
+  },
+  {
+    "species": "cat",
+    "level": 13,
+    "file": "cat-13.webp",
+    "width": 473,
+    "height": 480,
+    "bytes": 47352
+  },
+  {
+    "species": "cat",
+    "level": 14,
+    "file": "cat-14.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 56548
+  },
+  {
+    "species": "cat",
+    "level": 15,
+    "file": "cat-15.webp",
+    "width": 462,
+    "height": 480,
+    "bytes": 53660
+  },
+  {
+    "species": "cat",
+    "level": 16,
+    "file": "cat-16.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 48828
+  },
+  {
+    "species": "cat",
+    "level": 17,
+    "file": "cat-17.webp",
+    "width": 472,
+    "height": 480,
+    "bytes": 42662
+  },
+  {
+    "species": "cat",
+    "level": 18,
+    "file": "cat-18.webp",
+    "width": 480,
+    "height": 480,
+    "bytes": 50916
+  },
+  {
+    "species": "cat",
+    "level": 19,
+    "file": "cat-19.webp",
+    "width": 472,
+    "height": 480,
+    "bytes": 49224
+  },
+  {
+    "species": "cat",
+    "level": 20,
+    "file": "cat-20.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 51232
+  },
+  {
+    "species": "cat",
+    "level": 21,
+    "file": "cat-21.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 40210
+  },
+  {
+    "species": "cat",
+    "level": 22,
+    "file": "cat-22.webp",
+    "width": 480,
+    "height": 472,
+    "bytes": 65614
+  },
+  {
+    "species": "cat",
+    "level": 23,
+    "file": "cat-23.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 71496
+  },
+  {
+    "species": "cat",
+    "level": 24,
+    "file": "cat-24.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 62418
+  },
+  {
+    "species": "cat",
+    "level": 25,
+    "file": "cat-25.webp",
+    "width": 480,
+    "height": 429,
+    "bytes": 71304
+  },
+  {
+    "species": "rabbit",
+    "level": 1,
+    "file": "rabbit-01.webp",
+    "width": 454,
+    "height": 480,
+    "bytes": 34926
+  },
+  {
+    "species": "rabbit",
+    "level": 2,
+    "file": "rabbit-02.webp",
+    "width": 453,
+    "height": 480,
+    "bytes": 30490
+  },
+  {
+    "species": "rabbit",
+    "level": 3,
+    "file": "rabbit-03.webp",
+    "width": 475,
+    "height": 480,
+    "bytes": 34170
+  },
+  {
+    "species": "rabbit",
+    "level": 4,
+    "file": "rabbit-04.webp",
+    "width": 462,
+    "height": 480,
+    "bytes": 29364
+  },
+  {
+    "species": "rabbit",
+    "level": 5,
+    "file": "rabbit-05.webp",
+    "width": 451,
+    "height": 480,
+    "bytes": 57736
+  },
+  {
+    "species": "rabbit",
+    "level": 6,
+    "file": "rabbit-06.webp",
+    "width": 453,
+    "height": 480,
+    "bytes": 33058
+  },
+  {
+    "species": "rabbit",
+    "level": 7,
+    "file": "rabbit-07.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 34840
+  },
+  {
+    "species": "rabbit",
+    "level": 8,
+    "file": "rabbit-08.webp",
+    "width": 452,
+    "height": 480,
+    "bytes": 34820
+  },
+  {
+    "species": "rabbit",
+    "level": 9,
+    "file": "rabbit-09.webp",
+    "width": 453,
+    "height": 480,
+    "bytes": 38166
+  },
+  {
+    "species": "rabbit",
+    "level": 10,
+    "file": "rabbit-10.webp",
+    "width": 451,
+    "height": 480,
+    "bytes": 40624
+  },
+  {
+    "species": "rabbit",
+    "level": 11,
+    "file": "rabbit-11.webp",
+    "width": 454,
+    "height": 480,
+    "bytes": 39282
+  },
+  {
+    "species": "rabbit",
+    "level": 12,
+    "file": "rabbit-12.webp",
+    "width": 452,
+    "height": 480,
+    "bytes": 37768
+  },
+  {
+    "species": "rabbit",
+    "level": 13,
+    "file": "rabbit-13.webp",
+    "width": 455,
+    "height": 480,
+    "bytes": 45340
+  },
+  {
+    "species": "rabbit",
+    "level": 14,
+    "file": "rabbit-14.webp",
+    "width": 451,
+    "height": 480,
+    "bytes": 51354
+  },
+  {
+    "species": "rabbit",
+    "level": 15,
+    "file": "rabbit-15.webp",
+    "width": 454,
+    "height": 480,
+    "bytes": 63842
+  },
+  {
+    "species": "rabbit",
+    "level": 16,
+    "file": "rabbit-16.webp",
+    "width": 452,
+    "height": 480,
+    "bytes": 56778
+  },
+  {
+    "species": "rabbit",
+    "level": 17,
+    "file": "rabbit-17.webp",
+    "width": 453,
+    "height": 480,
+    "bytes": 75456
+  },
+  {
+    "species": "rabbit",
+    "level": 18,
+    "file": "rabbit-18.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 48198
+  },
+  {
+    "species": "rabbit",
+    "level": 19,
+    "file": "rabbit-19.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 51596
+  },
+  {
+    "species": "rabbit",
+    "level": 21,
+    "file": "rabbit-21.webp",
+    "width": 469,
+    "height": 480,
+    "bytes": 44238
+  },
+  {
+    "species": "panda",
+    "level": 10,
+    "file": "panda-10.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 37550
+  },
+  {
+    "species": "panda",
+    "level": 8,
+    "file": "panda-08.webp",
+    "width": 458,
+    "height": 480,
+    "bytes": 34604
+  },
+  {
+    "species": "panda",
+    "level": 11,
+    "file": "panda-11.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 31736
+  },
+  {
+    "species": "panda",
+    "level": 24,
+    "file": "panda-24.webp",
+    "width": 456,
+    "height": 480,
+    "bytes": 61240
+  },
+  {
+    "species": "rabbit",
+    "level": 23,
+    "file": "rabbit-23.webp",
+    "width": 462,
+    "height": 480,
+    "bytes": 53674
+  },
+  {
+    "species": "rabbit",
+    "level": 22,
+    "file": "rabbit-22.webp",
+    "width": 452,
+    "height": 480,
+    "bytes": 68086
+  },
+  {
+    "species": "panda",
+    "level": 19,
+    "file": "panda-19.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 36318
+  },
+  {
+    "species": "panda",
+    "level": 25,
+    "file": "panda-25.webp",
+    "width": 480,
+    "height": 439,
+    "bytes": 79446
+  },
+  {
+    "species": "panda",
+    "level": 16,
+    "file": "panda-16.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 43956
+  },
+  {
+    "species": "rabbit",
+    "level": 24,
+    "file": "rabbit-24.webp",
+    "width": 462,
+    "height": 480,
+    "bytes": 58480
+  },
+  {
+    "species": "panda",
+    "level": 17,
+    "file": "panda-17.webp",
+    "width": 471,
+    "height": 480,
+    "bytes": 36750
+  },
+  {
+    "species": "panda",
+    "level": 5,
+    "file": "panda-05.webp",
+    "width": 453,
+    "height": 480,
+    "bytes": 32056
+  },
+  {
+    "species": "panda",
+    "level": 1,
+    "file": "panda-01.webp",
+    "width": 462,
+    "height": 480,
+    "bytes": 27610
+  },
+  {
+    "species": "panda",
+    "level": 9,
+    "file": "panda-09.webp",
+    "width": 455,
+    "height": 480,
+    "bytes": 31062
+  },
+  {
+    "species": "panda",
+    "level": 13,
+    "file": "panda-13.webp",
+    "width": 452,
+    "height": 480,
+    "bytes": 35632
+  },
+  {
+    "species": "panda",
+    "level": 3,
+    "file": "panda-03.webp",
+    "width": 451,
+    "height": 480,
+    "bytes": 32628
+  },
+  {
+    "species": "panda",
+    "level": 14,
+    "file": "panda-14.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 37264
+  },
+  {
+    "species": "panda",
+    "level": 18,
+    "file": "panda-18.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 38322
+  },
+  {
+    "species": "panda",
+    "level": 23,
+    "file": "panda-23.webp",
+    "width": 456,
+    "height": 480,
+    "bytes": 54790
+  },
+  {
+    "species": "panda",
+    "level": 12,
+    "file": "panda-12.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 37592
+  },
+  {
+    "species": "panda",
+    "level": 6,
+    "file": "panda-06.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 46860
+  },
+  {
+    "species": "panda",
+    "level": 2,
+    "file": "panda-02.webp",
+    "width": 454,
+    "height": 480,
+    "bytes": 32804
+  },
+  {
+    "species": "rabbit",
+    "level": 25,
+    "file": "rabbit-25.webp",
+    "width": 474,
+    "height": 480,
+    "bytes": 80964
+  },
+  {
+    "species": "panda",
+    "level": 21,
+    "file": "panda-21.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 35266
+  },
+  {
+    "species": "rabbit",
+    "level": 20,
+    "file": "rabbit-20.webp",
+    "width": 441,
+    "height": 480,
+    "bytes": 60644
+  },
+  {
+    "species": "panda",
+    "level": 7,
+    "file": "panda-07.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 31978
+  },
+  {
+    "species": "panda",
+    "level": 22,
+    "file": "panda-22.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 62048
+  },
+  {
+    "species": "panda",
+    "level": 4,
+    "file": "panda-04.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 26446
+  },
+  {
+    "species": "panda",
+    "level": 15,
+    "file": "panda-15.webp",
+    "width": 439,
+    "height": 480,
+    "bytes": 51980
+  },
+  {
+    "species": "panda",
+    "level": 20,
+    "file": "panda-20.webp",
+    "width": 451,
+    "height": 480,
+    "bytes": 54292
+  }
+]
